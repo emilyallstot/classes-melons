@@ -1,10 +1,13 @@
 """This file should have our melon-type classes in it."""
 
-class Melon(object):
+class AbstractMelon(object):
     def get_base_price(self):
         return 5.0
 
-class WatermelonOrder(Melon):
+    def __init__(self):
+        raise Exception, "Cannot make AbstractMelon"
+
+class WatermelonOrder(AbstractMelon):
     species = "Watermelon"
     color = "green"
     imported = False
@@ -21,7 +24,10 @@ class WatermelonOrder(Melon):
 
         return total
 
-class CantaloupeOrder(Melon):
+    def __init__(self):
+        pass
+
+class CantaloupeOrder(AbstractMelon):
     species = "Cantaloupe"
     color = "tan"
     imported = False
@@ -38,7 +44,10 @@ class CantaloupeOrder(Melon):
 
         return total
 
-class CasabaOrder(Melon):
+    def __init__(self):
+        pass
+
+class CasabaOrder(AbstractMelon):
     species = "Casaba"
     color = "green"
     imported = True
@@ -52,7 +61,10 @@ class CasabaOrder(Melon):
         
         return total
 
-class SharlynOrder(Melon):
+    def __init__(self):
+        pass
+
+class SharlynOrder(AbstractMelon):
     species = "Sharlyn"
     color = "tan"
     imported = True
@@ -66,7 +78,10 @@ class SharlynOrder(Melon):
         
         return total
 
-class SantaClausOrder(Melon):
+    def __init__(self):
+        pass
+
+class SantaClausOrder(AbstractMelon):
     species = "Santa Claus"
     color = "green"
     imported = True
@@ -80,7 +95,10 @@ class SantaClausOrder(Melon):
         
         return total
 
-class ChristmasOrder(Melon):
+    def __init__(self):
+        pass
+
+class ChristmasOrder(AbstractMelon):
     species = "Christmas"
     color = "green"
     imported = False
@@ -94,7 +112,10 @@ class ChristmasOrder(Melon):
         
         return total
 
-class HornedMelonOrder(Melon):
+    def __init__(self):
+        pass
+
+class HornedMelonOrder(AbstractMelon):
     species = "Horned Melon"
     color = "yellow"
     imported = True
@@ -108,7 +129,10 @@ class HornedMelonOrder(Melon):
         
         return total
 
-class XiguaOrder(Melon):
+    def __init__(self):
+        pass
+
+class XiguaOrder(AbstractMelon):
     species = "Xigua"
     color = "black"
     imported = True
@@ -122,7 +146,10 @@ class XiguaOrder(Melon):
         
         return total
 
-class OgenOrder(Melon):
+    def __init__(self):
+        pass
+
+class OgenOrder(AbstractMelon):
     species = "Ogen"
     color = "tan"
     imported = False
@@ -135,3 +162,6 @@ class OgenOrder(Melon):
         total = (self.get_base_price() + 1) * qty
         
         return total
+
+    def __init__(self):
+        pass
