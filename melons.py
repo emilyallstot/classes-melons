@@ -1,7 +1,10 @@
 """This file should have our melon-type classes in it."""
 
+class Melon(object):
+    def get_base_price(self):
+        return 5.0
 
-class WatermelonOrder(object):
+class WatermelonOrder(Melon):
     species = "Watermelon"
     color = "green"
     imported = False
@@ -12,13 +15,13 @@ class WatermelonOrder(object):
         """Calculate price, given a number of melons ordered."""
 
         if qty < 3:
-            total = 5.0 * qty
+            total = self.get_base_price() * qty
         else:
-            total = 0.75 * 5 * qty
+            total = 0.75 * self.get_base_price() * qty
 
         return total
 
-class CantaloupeOrder(object):
+class CantaloupeOrder(Melon):
     species = "Cantaloupe"
     color = "tan"
     imported = False
@@ -29,13 +32,13 @@ class CantaloupeOrder(object):
         """Calculate price, given a number of melons ordered."""
 
         if qty < 5:
-            total = 5.0 * qty
+            total = self.get_base_price() * qty
         else:
-            total = 0.5 * 5.0 * qty
+            total = 0.5 * self.get_base_price() * qty
 
         return total
 
-class CasabaOrder(object):
+class CasabaOrder(Melon):
     species = "Casaba"
     color = "green"
     imported = True
@@ -45,11 +48,11 @@ class CasabaOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
      
-        total = 9.0 * qty
+        total = (self.get_base_price() + 1) * 1.5 * qty
         
         return total
 
-class SharlynOrder(object):
+class SharlynOrder(Melon):
     species = "Sharlyn"
     color = "tan"
     imported = True
@@ -59,11 +62,11 @@ class SharlynOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
      
-        total = 5 * 1.5 * qty
+        total = self.get_base_price() * 1.5 * qty
         
         return total
 
-class SantaClausOrder(object):
+class SantaClausOrder(Melon):
     species = "Santa Claus"
     color = "green"
     imported = True
@@ -73,11 +76,11 @@ class SantaClausOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
      
-        total = 5 * 1.5 * qty
+        total = self.get_base_price() * 1.5 * qty
         
         return total
 
-class ChristmasOrder(object):
+class ChristmasOrder(Melon):
     species = "Christmas"
     color = "green"
     imported = False
@@ -87,11 +90,11 @@ class ChristmasOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
      
-        total = 5 * qty
+        total = self.get_base_price() * qty
         
         return total
 
-class HornedMelonOrder(object):
+class HornedMelonOrder(Melon):
     species = "Horned Melon"
     color = "yellow"
     imported = True
@@ -101,11 +104,11 @@ class HornedMelonOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
      
-        total = 5 * 1.5 * qty
+        total = self.get_base_price() * 1.5 * qty
         
         return total
 
-class XiguaOrder(object):
+class XiguaOrder(Melon):
     species = "Xigua"
     color = "black"
     imported = True
@@ -115,11 +118,11 @@ class XiguaOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
      
-        total = 5 * 1.5 * 2 * qty
+        total = self.get_base_price() * 1.5 * 2 * qty
         
         return total
 
-class OgenOrder(object):
+class OgenOrder(Melon):
     species = "Ogen"
     color = "tan"
     imported = False
@@ -129,6 +132,6 @@ class OgenOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
      
-        total = 6 * qty
+        total = (self.get_base_price() + 1) * qty
         
         return total
